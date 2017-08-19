@@ -1,0 +1,31 @@
+<div ng-controller="moviesController">
+    <div ng-init="getMovies();">
+        <table>
+            <tr>
+                <th>Cím</th>
+                <th>Rendező</th>
+                <th>Hossza</th>
+                <th>Következő vetítés</th>
+                <th>Rendelt helyek</th>
+                <th>Rendelés</th>
+            </tr>
+            <tr ng-repeat="movie in movies">
+                <td> {{ movie.title }} </td>
+                <td> {{ movie.director }} </td>
+                <td> {{ movie.length }} </td>
+                <td> {{ movie.screeningtime }} </td>
+                <td> <input type="number" id="seats{{movie.id}}" min="0" max="{{ movie.availableseats }}"> </td>
+                <td> <button name="orderbutton" ng-click="click(movie);">Rendel</button></td>
+            </tr>
+        </table>
+        <div name="orderdetails" ng-show="show();">
+            <label id="moviename"></label></br>
+            <label id="reservedseats"></label></br>
+            <label>Rendelő neve</label>
+            <input type="text" id="customername" placeholder="rendelő neve">
+            <label>Email címe:</label>
+            <input type="email" id="customeremail" placeholder="email cím">
+            <button ng-click="saveOrder();">Foglalás</button>
+        </div>
+    </div>
+</div>

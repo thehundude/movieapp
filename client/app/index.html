@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="moviesApp">
+
+<head>
+    <title>Movie App</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="modules/movie/movies.controller.js"></script>
+    <script src="modules/movie/allorders.controller.js"></script>
+    <script src="services/my.services.js"></script>
+    <base href="/">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="#!/">Főoldal</a></li>
+            <li role="presentation"><a href="#!/movie">Mozijegy rendelés</a></li>
+            <li role="presentation"><a href="#!/allorders">Összes rendelés</a></li>
+        </ul>
+        <div ng-view></div>
+    </div>
+</body>
+
+</html>
