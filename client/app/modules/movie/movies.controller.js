@@ -14,7 +14,7 @@ moviesApp.controller('moviesController',
             var order = {};
             order.name = document.getElementById("customername").value;
             order.email = document.getElementById("customeremail").value;
-            order.movieid = document.getElementById("movieid");
+            order.movieid = document.getElementById("movieid").innerText;
             order.tickets = document.getElementById("reservedseats").innerText;
             moviesAppService.saveOrder(order);
             order = null;       
