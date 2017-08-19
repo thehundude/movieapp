@@ -14,7 +14,7 @@ moviesApp.controller('moviesController',
             var order = {};
             order.name = document.getElementById("customername").value;
             order.email = document.getElementById("customeremail").value;
-            order.movieid = document.getElementById("moviename").innerText;
+            order.movieid = document.getElementById("movieid");
             order.tickets = document.getElementById("reservedseats").innerText;
             moviesAppService.saveOrder(order);
             order = null;       
@@ -28,8 +28,8 @@ moviesApp.controller('moviesController',
             
             // csúnya  megoldás a rendelés adatok átvitelére
             var number = "seats" + movie.id;
-            var x = document.getElementById("moviename");
-            x.innerText = movie.title;
+            var x = document.getElementById("movieid");
+            x.innerText = movie.id;
             var y = document.getElementById("reservedseats");
             var z = document.getElementById(number).value;
             y.innerText = z;

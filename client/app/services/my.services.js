@@ -7,7 +7,9 @@ moviesApp.factory('moviesAppService', function($http) {
     }
 
     service.saveOrder = function(order) {
-        return $http.post('http://localhost:8080/order', {order});
+        // FONTOS!: órán úgy vettük, hogy {order}, pedig a {} nem kell! ha benn marad, akkor nem tudja
+        // értelmezni a backend a request body-t!
+        return $http.post('http://localhost:8080/order', order);
     }
 
     service.getOrders = function() {
