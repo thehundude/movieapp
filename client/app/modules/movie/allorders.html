@@ -8,7 +8,7 @@
                 <th>Film id</th>
                 <th>Rendelt jegyek száma</th>
             </tr>
-            <tr ng-repeat="order in orders">
+            <tr ng-repeat="order in orders | startFrom:currentPage*pageSize | limitTo:pageSize">
                 <td>{{ order.id }}</td>
                 <td>{{ order.name }}</td>
                 <td>{{ order.email }}</td>
@@ -16,5 +16,13 @@
                 <td>{{ order.tickets }}</td>
             </tr>
         </table>
+        <!-- gombok lapozáshoz -->
+        <button ng-disabled="currentPage == 0" ng-click="currentPage = currentPage - 1">
+            Előző
+        </button>
+        <label>{{currentPage + 1}}/{{numberOfPages()}}</label>
+        <button ng-disabled="currentPage >=orders.length/pageSize - 1" ng-click="currentPage = currentPage + 1">
+            Következő
+        </button>
     </div>
 </div>
