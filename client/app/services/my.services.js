@@ -16,5 +16,9 @@ moviesApp.factory('moviesAppService', function($http) {
         return $http.get('http://localhost:8080/order');
     }
 
+    service.addMovie = function(movie) {
+        return $http.post('http://localhost:8080/movie', movie)
+    }
+
     return service;
 })

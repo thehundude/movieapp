@@ -11,4 +11,7 @@ moviesApp.config (function($routeProvider) {
         .when("/allorders", {
             templateUrl: "modules/movie/allorders.html"
         })
+        .when("/addmovie", {
+            templateUrl: "modules/movie/addmovie.html"
+        })
 });

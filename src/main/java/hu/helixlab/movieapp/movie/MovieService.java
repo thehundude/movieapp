@@ -11,4 +11,8 @@ public class MovieService {
     Iterable<Movie> findAll() {
         return movieRepository.findAll();
     }
+
+    Movie addMovie(Movie movie) {
+        return movieRepository.saveAndFlush(movie);
+    }
 }
