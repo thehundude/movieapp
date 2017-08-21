@@ -1,11 +1,11 @@
 <div class="form-group" ng-controller="addMovieController">
     <label>Film címe: </label>
-    <input name="movieTitle" type="text" ng-model="movie.title"></br>
+    <input id="movieTitle" type="text" ng-blur="disableButton();" ng-model="movie.title"></br>
     <label>Rendező: </label>
-    <input name="movieDirector" type="text" ng-model="movie.director"></br>
+    <input id="movieDirector" type="text" ng-blur="disableButton();" ng-model="movie.director"></br>
     <label>Hossza(perc): </label>
-    <input name="movieLength" type="number" ng-model="movie.length"></br>
+    <input id="movieLength" type="number" ng-blur="disableButton();" ng-model="movie.length"></br>
     <label>Legközelebbi vetítés: </label>
-    <input name="movieScreening" type="date" ng-model="movie.screeningtime"></br>
-    <button ng-click="addMovie();">Hozzáadás</button>
+    <input id="movieScreening" type="date" ng-blur="disableButton();" ng-model="movie.screeningtime"></br>
+    <button ng-click="addMovie();" ng-disabled="disabledButton">Hozzáadás</button>
 </div>

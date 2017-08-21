@@ -5,4 +5,19 @@ moviesApp.controller('addMovieController',
             moviesAppService.addMovie($scope.movie);
             $scope.movie = {};
         }
+
+        $scope.disabledButton = "disabled";
+
+        $scope.disableButton = function() {
+            if (document.getElementById("movieTitle").value == "" ||
+                document.getElementById("movieDirector").value == "" ||
+                document.getElementById("movieLength").value == "" ||
+                document.getElementById("movieScreening").value == ""
+                ) {
+                    $scope.disabledButton = "disabled";
+                }
+            else {
+                $scope.disabledButton = "";
+            }
+        }
     });
